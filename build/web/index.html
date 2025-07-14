@@ -1,0 +1,46 @@
+
+
+<!DOCTYPE html>
+
+
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Welcome to BC Wellness App</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+  function goToLogin() {
+    // You can add validation or other logic here
+    window.location.href = 'Login.jsp';
+    
+  }
+</script>
+
+<script>
+    function goToRegister(){
+        //add logic here
+        window.location.href = 'Register.jsp';
+        
+        
+    }
+</script>
+    </head>
+    <body>
+        <div>
+            <h1>Welcome to BC Wellness App</h1>
+        <img src="images/pic.jpg " alt="Description of image" width="300" height="200"><br><!-- comment -->
+        <br>
+        
+        <input type="button" onclick="goToRegister()" value="Register" name="btnRegister" />
+        <input type="button" onclick="goToLogin()" value="Login" name="btnLogin" />
+    
+        </div>  
+    </body>
+   
+   
+</html>
+ 
