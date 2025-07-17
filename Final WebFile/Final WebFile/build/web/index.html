@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Welcome to BC Wellness App</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="welcome-container">
+            <h1>Welcome to BC Wellness App</h1>
+            <p class="info">The BC Wellness App is dedicated to supporting the mental health and well-being of Belgium Campus students throughout their studies. Designed to provide resources, tools, and a supportive community, our app helps students manage stress, stay connected, and prioritize self-care, ensuring they thrive academically and personally.</p>
+            <div class="button-container">
+                <input type="button" onclick="goToRegister()" value="Register" name="btnRegister">
+                <input type="button" onclick="goToLogin()" value="Login" name="btnLogin">
+            </div>
+        </div>
+        <script>
+            function goToRegister() {
+                window.location.href = 'Register.jsp';
+            }
+
+            function goToLogin() {
+                window.location.href = 'Login.jsp';
+            }
+        </script>
+    </body>
+</html>

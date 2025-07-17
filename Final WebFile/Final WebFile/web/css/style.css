@@ -1,0 +1,2380 @@
+/* css/style.css */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Background image with blur */
+    background: url('https://cdn.pixabay.com/photo/2022/04/15/07/58/sunset-7133867_1280.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+}
+
+/* Apply blur to background via pseudo-element */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: blur(8px); /* Subtle blur for background */
+    z-index: -1;
+}
+
+form {
+    background: rgba(255, 255, 255, 0.15); /* Semi-transparent white for glassmorphism */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    width: 100%;
+    max-width: 400px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center all form content */
+}
+
+form:hover {
+    transform: translateY(-5px); /* Smooth lift on hover */
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+h2 {
+    color: #ffffff; /* White text for contrast */
+    font-size: 1.8rem;
+    margin: 0 0 1.5rem 0; /* Contained within form */
+    font-weight: 600;
+    text-align: center;
+}
+
+label {
+    color: #ffffff; /* White labels for readability */
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    align-self: flex-start; /* Align labels to the left of input fields */
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Light border */
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #ffffff; /* White text */
+    background: rgba(255, 255, 255, 0.1); /* Transparent input background */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* Light placeholder text */
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #60a5fa; /* Soft blue focus */
+    box-shadow: 0 0 8px rgba(96, 165, 250, 0.4); /* Glow effect */
+}
+
+.password-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#togglePassword {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2); /* Transparent button */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 6px;
+    color: #ffffff;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#togglePassword:hover {
+    background: rgba(255, 255, 255, 0.3); /* Slightly darker on hover */
+    transform: translateY(-50%) scale(1.05);
+}
+
+#togglePassword:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+input[type="checkbox"] {
+    margin-right: 0.5rem;
+    accent-color: #60a5fa; /* Blue checkbox for consistency */
+}
+
+label[for="remember"] {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    margin: 0.5rem 0 1rem 0; /* Space below checkbox */
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 0.75rem;
+    background: #3b82f6; /* Vibrant blue button */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+input[type="submit"]:hover {
+    background: #2563eb; /* Darker blue on hover */
+    transform: scale(1.02); /* Subtle scale */
+}
+
+input[type="submit"]:active {
+    transform: scale(0.98); /* Press effect */
+}
+
+p {
+    color: #f87171; /* Soft red for error */
+    font-size: 0.9rem;
+    margin: 1rem 0 0 0; /* Contained within form */
+    text-align: center;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    form {
+        padding: 1.5rem;
+        max-width: 90%;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="submit"],
+    #togglePassword {
+        font-size: 0.9rem;
+    }
+
+    label[for="remember"] {
+        font-size: 0.8rem;
+    }
+
+    p {
+        font-size: 0.8rem;
+    }
+}
+
+/* css/style.css */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('https://cdn.pixabay.com/photo/2016/09/19/07/01/lake-1679708_1280.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+}
+
+/* Apply blur to background via pseudo-element */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: blur(8px); /* Subtle blur for background */
+    z-index: -1;
+}
+
+form {
+    background: rgba(255, 255, 255, 0.15); /* Semi-transparent white for glassmorphism */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    width: 100%;
+    max-width: 400px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center all form content */
+}
+
+form:hover {
+    transform: translateY(-5px); /* Smooth lift on hover */
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+h2 {
+    color: #ffffff; /* White text for contrast */
+    font-size: 1.8rem;
+    margin: 0 0 1.5rem 0; /* Contained within form */
+    font-weight: 600;
+    text-align: center;
+}
+
+label {
+    color: #ffffff; /* White labels for readability */
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    align-self: flex-start; /* Align labels to the left of input fields */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Light border */
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #ffffff; /* White text */
+    background: rgba(255, 255, 255, 0.1); /* Transparent input background */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="password"]::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* Light placeholder text */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #60a5fa; /* Soft blue focus */
+    box-shadow: 0 0 8px rgba(96, 165, 250, 0.4); /* Glow effect */
+}
+
+.password-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#togglePassword {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2); /* Transparent button */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 6px;
+    color: #ffffff;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#togglePassword:hover {
+    background: rgba(255, 255, 255, 0.3); /* Slightly darker on hover */
+    transform: translateY(-50%) scale(1.05);
+}
+
+#togglePassword:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+input[type="checkbox"] {
+    margin-right: 0.5rem;
+    accent-color: #60a5fa; /* Blue checkbox for consistency */
+}
+
+label[for="remember"] {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    margin: 0.5rem 0 1rem 0; /* Space below checkbox */
+}
+
+.button-container {
+    display: flex;
+    gap: 0.5rem;
+    width: 100%;
+    justify-content: space-between;
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+    flex: 1;
+    padding: 0.75rem;
+    background: #3b82f6; /* Vibrant blue button */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover {
+    background: #2563eb; /* Darker blue on hover */
+    transform: scale(1.02); /* Subtle scale */
+}
+
+input[type="submit"]:active,
+input[type="reset"]:active,
+input[type="button"]:active {
+    transform: scale(0.98); /* Press effect */
+}
+
+p.slogan {
+    color: #ffffff; /* White for slogan */
+    font-size: 0.9rem;
+    margin: 1rem 0 0 0;
+    text-align: center;
+    font-style: italic;
+}
+
+p.error {
+    color: #f87171; /* Soft red for error */
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+    text-align: center;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    form {
+        padding: 1.5rem;
+        max-width: 90%;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="submit"],
+    input[type="reset"],
+    input[type="button"],
+    #togglePassword {
+        font-size: 0.9rem;
+    }
+
+    label[for="remember"],
+    p.slogan,
+    p.error {
+        font-size: 0.8rem;
+    }
+
+    .button-container {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    input[type="submit"],
+    input[type="reset"],
+    input[type="button"] {
+        width: 100%;
+    }
+}
+
+/* css/style.css */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('https://cdn.pixabay.com/photo/2016/09/19/07/01/lake-1679708_1280.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+}
+
+/* Apply blur to background via pseudo-element */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: blur(8px); /* Subtle blur for background */
+    z-index: -1;
+}
+
+/* Shared container styles for forms and welcome page */
+.container, form, .welcome-container {
+    background: rgba(255, 255, 255, 0.15); /* Semi-transparent white for glassmorphism */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    width: 100%;
+    max-width: 400px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center all content */
+}
+
+.container:hover, form:hover, .welcome-container:hover {
+    transform: translateY(-5px); /* Smooth lift on hover */
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+h1, h2 {
+    color: #ffffff; /* White text for contrast */
+    font-size: 1.8rem;
+    margin: 0 0 1.5rem 0; /* Contained within container */
+    font-weight: 600;
+    text-align: center;
+}
+
+label {
+    color: #ffffff; /* White labels for readability */
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    align-self: flex-start; /* Align labels to the left of input fields */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Light border */
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #ffffff; /* White text */
+    background: rgba(255, 255, 255, 0.1); /* Transparent input background */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="password"]::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* Light placeholder text */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #60a5fa; /* Soft blue focus */
+    box-shadow: 0 0 8px rgba(96, 165, 250, 0.4); /* Glow effect */
+}
+
+.password-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#togglePassword {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2); /* Transparent button */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 6px;
+    color: #ffffff;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#togglePassword:hover {
+    background: rgba(255, 255, 255, 0.3); /* Slightly darker on hover */
+    transform: translateY(-50%) scale(1.05);
+}
+
+#togglePassword:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+input[type="checkbox"] {
+    margin-right: 0.5rem;
+    accent-color: #60a5fa; /* Blue checkbox for consistency */
+}
+
+label[for="remember"] {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    margin: 0.5rem 0 1rem 0; /* Space below checkbox */
+}
+
+.button-container {
+    display: flex;
+    gap: 0.5rem;
+    width: 100%;
+    justify-content: space-between;
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+    flex: 1;
+    padding: 0.75rem;
+    background: #3b82f6; /* Vibrant blue button */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover {
+    background: #2563eb; /* Darker blue on hover */
+    transform: scale(1.02); /* Subtle scale */
+}
+
+input[type="submit"]:active,
+input[type="reset"]:active,
+input[type="button"]:active {
+    transform: scale(0.98); /* Press effect */
+}
+
+p.slogan {
+    color: #ffffff; /* White for slogan */
+    font-size: 0.9rem;
+    margin: 1rem 0 0 0;
+    text-align: center;
+    font-style: italic;
+}
+
+p.error {
+    color: #f87171; /* Soft red for error */
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+    text-align: center;
+}
+
+/* Welcome page specific styles */
+.welcome-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+    margin: 1rem 0;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover {
+    background: #2563eb; /* Darker blue on hover */
+    transform: scale(1.02); /* Subtle scale */
+}
+
+input[type="submit"]:active,
+input[type="reset"]:active,
+input[type="button"]:active {
+    transform: scale(0.98); /* Press effect */
+}
+
+p.slogan {
+    color: #ffffff; /* White for slogan */
+    font-size: 0.9rem;
+    margin: 1rem 0 0 0;
+    text-align: center;
+    font-style: italic;
+}
+
+p.error {
+    color: #f87171; /* Soft red for error */
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+    text-align: center;
+}
+
+/* Welcome page specific styles */
+p.info {
+    color: #ffffff; /* White for info text */
+    font-size: 1rem;
+    margin: 1rem 0;
+    text-align: center;
+    line-height: 1.5;
+}
+
+/* css/style.css */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('https://cdn.pixabay.com/photo/2016/09/19/07/01/lake-1679708_1280.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+}
+
+/* Apply blur to background via pseudo-element */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: blur(8px); /* Subtle blur for background */
+    z-index: -1;
+}
+
+/* Shared container styles for forms and pages */
+.container, form, .welcome-container, .dashboard-container {
+    background: rgba(255, 255, 255, 0.15); /* Semi-transparent white for glassmorphism */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    width: 100%;
+    max-width: 600px; /* Wider for dashboard */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center all content */
+}
+
+.container:hover, form:hover, .welcome-container:hover, .dashboard-container:hover {
+    transform: translateY(-5px); /* Smooth lift on hover */
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+h1, h2 {
+    color: #ffffff; /* White text for contrast */
+    font-size: 1.8rem;
+    margin: 0 0 1.5rem 0; /* Contained within container */
+    font-weight: 600;
+    text-align: center;
+}
+
+h3 {
+    color: #ffffff; /* White for chart titles */
+    font-size: 1.2rem;
+    margin: 0 0 1rem 0;
+    text-align: center;
+}
+
+label {
+    color: #ffffff; /* White labels for readability */
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    align-self: flex-start; /* Align labels to the left of input fields */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Light border */
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #ffffff; /* White text */
+    background: rgba(255, 255, 255, 0.1); /* Transparent input background */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="password"]::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* Light placeholder text */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #60a5fa; /* Soft blue focus */
+    box-shadow: 0 0 8px rgba(96, 165, 250, 0.4); /* Glow effect */
+}
+
+.password-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#togglePassword {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2); /* Transparent button */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 6px;
+    color: #ffffff;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#togglePassword:hover {
+    background: rgba(255, 255, 255, 0.3); /* Slightly darker on hover */
+    transform: translateY(-50%) scale(1.05);
+}
+
+#togglePassword:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+input[type="checkbox"] {
+    margin-right: 0.5rem;
+    accent-color: #60a5fa; /* Blue checkbox for consistency */
+}
+
+label[for="remember"] {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    margin: 0.5rem 0 1rem 0; /* Space below checkbox */
+}
+
+.button-container {
+    display: flex;
+    gap: 0.5rem;
+    width: 100%;
+    justify-content: space-between;
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+    flex: 1;
+    padding: 0.75rem;
+    background: #3b82f6; /* Vibrant blue button */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover {
+    background: #2563eb; /* Darker blue on hover */
+    transform: scale(1.02); /* Subtle scale */
+}
+
+input[type="submit"]:active,
+input[type="reset"]:active,
+input[type="button"]:active {
+    transform: scale(0.98); /* Press effect */
+}
+
+p.slogan {
+    color: #ffffff; /* White for slogan */
+    font-size: 0.9rem;
+    margin: 1rem 0 0 0;
+    text-align: center;
+    font-style: italic;
+}
+
+p.error {
+    color: #f87171; /* Soft red for error */
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+    text-align: center;
+}
+
+p.info {
+    color: #ffffff; /* White for info text */
+    font-size: 1rem;
+    margin: 1rem 0;
+    text-align: center;
+    line-height: 1.5;
+}
+
+/* Dashboard specific styles */
+.user-info {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.user-info p {
+    color: #ffffff;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-info .label {
+    font-weight: 600;
+}
+
+.charts-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.chart-wrapper {
+    width: 100%;
+}
+
+.chart-wrapper canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .container, form, .welcome-container, .dashboard-container {
+        padding: 1.5rem;
+        max-width: 90%;
+    }
+
+    h1, h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="submit"],
+    input[type="reset"],
+    input[type="button"],
+    #togglePassword {
+        font-size: 0.9rem;
+    }
+
+    label[for="remember"],
+    p.slogan,
+    p.error,
+    p.info,
+    .user-info p {
+        font-size: 0.8rem;
+    }
+
+    .button-container {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    input[type="submit"],
+    input[type="reset"],
+    input[type="button"] {
+        width: 100%;
+    }
+}
+
+/* css/style.css */
+body {
+    margin: 0;
+    padding: 2rem;
+    min-height: 100vh;
+    background: url('https://cdn.pixabay.com/photo/2016/09/19/07/01/lake-1679708_1280.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+}
+
+/* Apply blur to background via pseudo-element */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: blur(8px);
+    z-index: -1;
+}
+
+/* Shared container styles */
+.container, form, .welcome-container, .dashboard-container, .name-card, .subjects-card, .charts-card, .average-card, .message-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    padding: 1.5rem;
+    border-radius: 16px;
+    border: 1px solid transparent;
+    background-clip: padding-box;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.container:hover, form:hover, .welcome-container:hover, .dashboard-container:hover, .name-card:hover, .subjects-card:hover, .charts-card:hover, .average-card:hover, .message-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+h1, h2, h3 {
+    color: #ffffff;
+    font-weight: 600;
+    text-align: center;
+    margin: 0 0 1rem 0;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.6rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+label {
+    color: #ffffff;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    align-self: flex-start;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="password"]::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #60a5fa;
+    box-shadow: 0 0 8px rgba(96, 165, 250, 0.4);
+}
+
+.password-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#togglePassword {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 6px;
+    color: #ffffff;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#togglePassword:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-50%) scale(1.05);
+}
+
+#togglePassword:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+input[type="checkbox"] {
+    margin-right: 0.5rem;
+    accent-color: #60a5fa;
+}
+
+label[for="remember"] {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    margin: 0.5rem 0 1rem 0;
+}
+
+.button-container {
+    display: flex;
+    gap: 0.5rem;
+    width: 100%;
+    justify-content: center;
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+    padding: 0.75rem;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    min-width: 120px;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover {
+    background: #2563eb;
+    transform: scale(1.02);
+}
+
+input[type="submit"]:active,
+input[type="reset"]:active,
+input[type="button"]:active {
+    transform: scale(0.98);
+}
+
+p.slogan {
+    color: #ffffff;
+    font-size: 0.9rem;
+    margin: 1rem 0 0 0;
+    text-align: center;
+    font-style: italic;
+}
+
+p.error {
+    color: #f87171;
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+    text-align: center;
+}
+
+p.info {
+    color: #ffffff;
+    font-size: 1rem;
+    margin: 1rem 0;
+    text-align: center;
+    line-height: 1.5;
+}
+
+/* Dashboard specific styles */
+.dashboard-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.name-card {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.75rem 1.5rem;
+    min-width: 200px;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(96, 165, 250, 0.2));
+    z-index: 10;
+}
+
+.subjects-card {
+    width: 200px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    animation-delay: 0.2s;
+}
+
+.subjects-card p {
+    color: #ffffff;
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.subjects-card .label {
+    font-weight: 500;
+}
+
+.charts-card {
+    width: 600px;
+    display: flex;
+    gap: 1rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(96, 165, 250, 0.1));
+    transform: translateY(50px);
+    z-index: 5;
+    animation-delay: 0.4s;
+}
+
+.chart-wrapper {
+    flex: 1;
+    max-width: 300px;
+}
+
+.chart-wrapper canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+.average-card {
+    width: 200px;
+    text-align: center;
+    transform: translateX(-100px) translateY(100px);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(96, 165, 250, 0.2));
+    animation-delay: 0.6s;
+}
+
+.message-card {
+    width: 300px;
+    transform: translateX(100px) translateY(80px);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(96, 165, 250, 0.2));
+    animation-delay: 0.8s;
+}
+
+.message-card p {
+    color: #ffffff;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0.5rem 0;
+}
+
+.back-button {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+    .dashboard-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .name-card {
+        position: static;
+        transform: none;
+        margin-bottom: 1rem;
+    }
+
+    .subjects-card {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .charts-card {
+        width: 100%;
+        max-width: 600px;
+        transform: none;
+    }
+
+    .average-card, .message-card {
+        width: 100%;
+        max-width: 300px;
+        transform: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .container, form, .welcome-container, .dashboard-container, .name-card, .subjects-card, .charts-card, .average-card, .message-card {
+        padding: 1rem;
+        max-width: 90%;
+    }
+
+    .charts-card {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .chart-wrapper {
+        max-width: 100%;
+    }
+
+    h1, h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="submit"],
+    input[type="reset"],
+    input[type="button"],
+    #togglePassword {
+        font-size: 0.9rem;
+    }
+
+    label[for="remember"],
+    p.slogan,
+    p.error,
+    p.info,
+    .subjects-card p,
+    .message-card p {
+        font-size: 0.8rem;
+    }
+}
+
+/* css/style.css */
+body {
+    margin: 0;
+    padding: 2rem;
+    min-height: 100vh;
+    background: url('https://cdn.pixabay.com/photo/2016/09/19/07/01/lake-1679708_1280.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+}
+
+/* Apply blur to background via pseudo-element */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: blur(8px);
+    z-index: -1;
+}
+
+/* Shared container styles */
+.container, form, .welcome-container, .dashboard-container, .name-card, .subjects-card, .charts-card, .summary-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    padding: 1.5rem;
+    border-radius: 16px;
+    border: 1px solid transparent;
+    background-clip: padding-box;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.container:hover, form:hover, .welcome-container:hover, .dashboard-container:hover, .name-card:hover, .subjects-card:hover, .charts-card:hover, .summary-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+h1, h2, h3 {
+    color: #ffffff;
+    font-weight: 600;
+    text-align: center;
+    margin: 0 0 1rem 0;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.6rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+label {
+    color: #ffffff;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    align-self: flex-start;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="password"]::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #60a5fa;
+    box-shadow: 0 0 8px rgba(96, 165, 250, 0.4);
+}
+
+.password-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#togglePassword {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 6px;
+    color: #ffffff;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#togglePassword:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-50%) scale(1.05);
+}
+
+#togglePassword:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+input[type="checkbox"] {
+    margin-right: 0.5rem;
+    accent-color: #60a5fa;
+}
+
+label[for="remember"] {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    margin: 0.5rem 0 1rem 0;
+}
+
+.button-container {
+    display: flex;
+    gap: 0.5rem;
+    width: 100%;
+    justify-content: center;
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+    padding: 0.75rem;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    min-width: 120px;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover {
+    background: #2563eb;
+    transform: scale(1.02);
+}
+
+input[type="submit"]:active,
+input[type="reset"]:active,
+input[type="button"]:active {
+    transform: scale(0.98);
+}
+
+p.slogan {
+    color: #ffffff;
+    font-size: 0.9rem;
+    margin: 1rem 0 0 0;
+    text-align: center;
+    font-style: italic;
+}
+
+p.error {
+    color: #f87171;
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+    text-align: center;
+}
+
+p.info {
+    color: #ffffff;
+    font-size: 1rem;
+    margin: 1rem 0;
+    text-align: center;
+    line-height: 1.5;
+}
+
+/* Dashboard specific styles */
+.dashboard-container {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 1rem;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.subjects-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    animation-delay: 0.2s;
+}
+
+.subjects-card p {
+    color: #ffffff;
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.subjects-card .label {
+    font-weight: 500;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.name-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(96, 165, 250, 0.2));
+    animation-delay: 0s;
+}
+
+.wellness-text {
+    color: #ffffff;
+    font-size: 0.9rem;
+    text-align: center;
+    line-height: 1.5;
+    margin: 0.5rem 0 0 0;
+    font-style: italic;
+}
+
+.charts-card {
+    display: flex;
+    gap: 1rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(96, 165, 250, 0.1));
+    animation-delay: 0.4s;
+}
+
+.chart-wrapper {
+    flex: 1;
+    max-width: 300px;
+}
+
+.chart-wrapper canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+.summary-card {
+    display: flex;
+    gap: 1rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(96, 165, 250, 0.2));
+    animation-delay: 0.6s;
+}
+
+.average-section, .message-section {
+    flex: 1;
+}
+
+.message-section p {
+    color: #ffffff;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0.5rem 0;
+}
+
+.back-button {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .dashboard-container {
+        grid-template-columns: 1fr;
+    }
+
+    .subjects-card {
+        max-width: 300px;
+    }
+
+    .charts-card {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .summary-card {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .container, form, .welcome-container, .dashboard-container, .name-card, .subjects-card, .charts-card, .summary-card {
+        padding: 1rem;
+        max-width: 90%;
+    }
+
+    h1, h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="submit"],
+    input[type="reset"],
+    input[type="button"],
+    #togglePassword {
+        font-size: 0.9rem;
+    }
+
+    label[for="remember"],
+    p.slogan,
+    p.error,
+    p.info,
+    .subjects-card p,
+    .message-section p,
+    .wellness-text {
+        font-size: 0.8rem;
+    }
+}
+
+/* css/style.css */
+body {
+    margin: 0;
+    padding: 2rem;
+    min-height: 100vh;
+    background: url('https://cdn.pixabay.com/photo/2016/09/19/07/01/lake-1679708_1280.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+}
+
+/* Apply blur to background via pseudo-element */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: blur(8px);
+    z-index: -1;
+}
+
+/* Shared container styles */
+.container, form, .welcome-container, .dashboard-container, .header-card, .sidebar-card, .main-content-card, .footer-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    padding: 1.5rem;
+    border-radius: 16px;
+    border: 1px solid transparent;
+    background-clip: padding-box;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.container:hover, form:hover, .welcome-container:hover, .dashboard-container:hover, .header-card:hover, .sidebar-card:hover, .main-content-card:hover, .footer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+h1, h2, h3 {
+    color: #ffffff;
+    font-weight: 600;
+    text-align: center;
+    margin: 0 0 1rem 0;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.6rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+label {
+    color: #ffffff;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    align-self: flex-start;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="password"]::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #60a5fa;
+    box-shadow: 0 0 8px rgba(96, 165, 250, 0.4);
+}
+
+.password-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#togglePassword {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 6px;
+    color: #ffffff;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#togglePassword:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-50%) scale(1.05);
+}
+
+#togglePassword:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+input[type="checkbox"] {
+    margin-right: 0.5rem;
+    accent-color: #60a5fa;
+}
+
+label[for="remember"] {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    margin: 0.5rem 0 1rem 0;
+}
+
+.button-container {
+    display: flex;
+    gap: 0.5rem;
+    width: 100%;
+    justify-content: center;
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+    padding: 0.75rem;
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    min-width: 120px;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+input[type="submit"]:active,
+input[type="reset"]:active,
+input[type="button"]:active {
+    transform: scale(0.98);
+}
+
+p.slogan {
+    color: #ffffff;
+    font-size: 0.9rem;
+    margin: 1rem 0 0 0;
+    text-align: center;
+    font-style: italic;
+}
+
+p.error {
+    color: #f87171;
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+    text-align: center;
+}
+
+p.info {
+    color: #ffffff;
+    font-size: 1rem;
+    margin: 1rem 0;
+    text-align: center;
+    line-height: 1.5;
+}
+
+/* Dashboard specific styles */
+.dashboard-container {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+    grid-template-columns: 220px 1fr;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.header-card {
+    grid-area: header;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(96, 165, 250, 0.2));
+    animation-delay: 0s;
+}
+
+.wellness-text {
+    color: #ffffff;
+    font-size: 0.9rem;
+    text-align: center;
+    line-height: 1.5;
+    margin: 0.5rem 0 0 0;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+.sidebar-card {
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    animation-delay: 0.2s;
+}
+
+.sidebar-card p {
+    color: #ffffff;
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.sidebar-card .label {
+    font-weight: 500;
+}
+
+.main-content-card {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    animation-delay: 0.4s;
+}
+
+.charts-section {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.chart-wrapper {
+    flex: 1;
+    max-width: 300px;
+}
+
+.chart-wrapper canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+.average-section {
+    text-align: center;
+    padding: 1rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(96, 165, 250, 0.2));
+    border-radius: 8px;
+    animation-delay: 0.6s;
+}
+
+.footer-card {
+    grid-area: footer;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(96, 165, 250, 0.2));
+    animation-delay: 0.8s;
+}
+
+.footer-card p {
+    color: #ffffff;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0.5rem 0;
+}
+
+.back-button {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .dashboard-container {
+        grid-template-areas:
+            "header"
+            "main"
+            "sidebar"
+            "footer";
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar-card {
+        max-width: 300px;
+    }
+
+    .charts-section {
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container, form, .welcome-container, .dashboard-container, .header-card, .sidebar-card, .main-content-card, .footer-card {
+        padding: 1rem;
+        max-width: 90%;
+    }
+
+    h1, h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="submit"],
+    input[type="reset"],
+    input[type="button"],
+    #togglePassword {
+        font-size: 0.9rem;
+    }
+
+    label[for="remember"],
+    p.slogan,
+    p.error,
+    p.info,
+    .sidebar-card p,
+    .footer-card p,
+    .wellness-text {
+        font-size: 0.8rem;
+    }
+}
+
+/* css/style.css */
+body {
+    margin: 0;
+    padding: 2rem;
+    min-height: 100vh;
+    background: url('https://cdn.pixabay.com/photo/2016/09/19/07/01/lake-1679708_1280.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+}
+
+/* Apply blur to background via pseudo-element */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: blur(8px);
+    z-index: -1;
+}
+
+/* Shared container styles */
+.container, form, .welcome-container, .dashboard-container, .header-card, .sidebar-card, .main-content-card, .footer-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    padding: 1.5rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Thin white border */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.container:hover, form:hover, .welcome-container:hover, .dashboard-container:hover, .header-card:hover, .sidebar-card:hover, .main-content-card:hover, .footer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+h1, h2, h3 {
+    color: #ffffff;
+    font-weight: 600;
+    text-align: center;
+    margin: 0 0 1rem 0;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.6rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+label {
+    color: #ffffff;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    align-self: flex-start;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="password"]::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #60a5fa;
+    box-shadow: 0 0 8px rgba(96, 165, 250, 0.4);
+}
+
+.password-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#togglePassword {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 6px;
+    color: #ffffff;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#togglePassword:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-50%) scale(1.05);
+}
+
+#togglePassword:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+input[type="checkbox"] {
+    margin-right: 0.5rem;
+    accent-color: #60a5fa;
+}
+
+label[for="remember"] {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    margin: 0.5rem 0 1rem 0;
+}
+
+.button-container {
+    display: flex;
+    gap: 0.5rem;
+    width: 100%;
+    justify-content: center;
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+    padding: 0.75rem;
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    min-width: 120px;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+input[type="submit"]:active,
+input[type="reset"]:active,
+input[type="button"]:active {
+    transform: scale(0.98);
+}
+
+p.slogan {
+    color: #ffffff;
+    font-size: 0.9rem;
+    margin: 1rem 0 0 0;
+    text-align: center;
+    font-style: italic;
+}
+
+p.error {
+    color: #f87171;
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+    text-align: center;
+}
+
+p.info {
+    color: #ffffff;
+    font-size: 1rem;
+    margin: 1rem 0;
+    text-align: center;
+    line-height: 1.5;
+}
+
+/* Dashboard specific styles */
+.dashboard-container {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer main";
+    grid-template-columns: 220px 1fr;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.header-card {
+    grid-area: header;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(96, 165, 250, 0.2));
+    animation-delay: 0s;
+}
+
+.wellness-text {
+    color: #ffffff;
+    font-size: 0.9rem;
+    text-align: center;
+    line-height: 1.5;
+    margin: 0.5rem 0 0 0;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+.sidebar-card {
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    animation-delay: 0.2s;
+}
+
+.sidebar-card p {
+    color: #ffffff;
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.sidebar-card .label {
+    font-weight: 500;
+}
+
+.main-content-card {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    animation-delay: 0.4s;
+}
+
+.charts-section {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.chart-wrapper {
+    flex: 1;
+    max-width: 300px;
+}
+
+.chart-wrapper canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+.average-section {
+    text-align: center;
+    padding: 1rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(96, 165, 250, 0.2));
+    border-radius: 8px;
+    animation-delay: 0.6s;
+}
+
+.footer-card {
+    grid-area: footer;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(96, 165, 250, 0.2));
+    animation-delay: 0.8s;
+}
+
+.footer-card p {
+    color: #ffffff;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0.5rem 0;
+}
+
+.back-button {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .dashboard-container {
+        grid-template-areas:
+            "header"
+            "sidebar"
+            "footer"
+            "main";
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar-card {
+        max-width: 300px;
+    }
+
+    .charts-section {
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container, form, .welcome-container, .dashboard-container, .header-card, .sidebar-card, .main-content-card, .footer-card {
+        padding: 1rem;
+        max-width: 90%;
+    }
+
+    h1, h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="submit"],
+    input[type="reset"],
+    input[type="button"],
+    #togglePassword {
+        font-size: 0.9rem;
+    }
+
+    label[for="remember"],
+    p.slogan,
+    p.error,
+    p.info,
+    .sidebar-card p,
+    .footer-card p,
+    .wellness-text {
+        font-size: 0.8rem;
+    }
+}
